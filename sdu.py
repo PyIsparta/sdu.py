@@ -105,7 +105,12 @@ class SDUCMD(cmd.Cmd):
                 self.request_data["textKulID"] = self.username
                 self.request_data["textSifre"] = password
                 self.response['info_page'] = self.session.post(START_URL, data=self.request_data)
-                self.is_login = True
+                if not self.response['info_page'].url == START_URL:
+                    print_log("Login success.", "info")
+                    self.is_login = True
+                else:
+                    print_log("Username or password wrong.", "error")
+                    self.is_login = False
             except requests.ConnectionError:
                 print_log("Connection error.", "error")
                 self.is_login = False
