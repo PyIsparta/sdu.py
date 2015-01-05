@@ -19,7 +19,7 @@ FIELDS = ("__EVENTTARGET", "__EVENTARGUMENT", "__VIEWSTATEFIELDCOUNT",
           "__PREVIOUSPAGE", "buttonTamam")
 
 
-LOG_TYPES = {"debug": "white", "info": "blue", "error": "red"}
+LOG_TYPES = {"debug": "white", "info": "cyan", "error": "red"}
 
 
 def print_log(msg, level="debug"):
